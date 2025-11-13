@@ -7,4 +7,6 @@ import { SecondaryButtonComponent } from '../secondary-button/secondary-button.c
   templateUrl: './item-certificado.component.html',
   styleUrl: './item-certificado.component.css',
 })
-export class ItemCertificadoComponent {}
+export class ItemCertificadoComponent {
+  redirecionaCertificado() {}
+}

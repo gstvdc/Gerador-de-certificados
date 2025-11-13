@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center">
+<form #form="ngForm" novalidate class="d-flex flex-column align-items-center">
   <div class="content-titles">
     <h1 class="fw-bold custom-title">Geração de certificados</h1>
     <p class="mb-4 custom-subtitle">
@@ -7,43 +7,69 @@
   </div>
   <div class="custom-card w-100">
     <h2 class="card-title">Novo certificado</h2>
-    <div class="mb-3 custom-input-group">
+    <div class="custom-input-group">
       <label for="nome" class="form-label">Nome</label>
       <input
+        [(ngModel)]="nome"
+        name="nome"
+        #nomeRef="ngModel"
+        maxlength="150"
+        required
         id="nome"
         type="text"
         class="form-control custom-input"
         placeholder="Nome do aluno"
       />
+      @if (nomeRef.invalid && nomeRef.touched && nomeRef.errors?.['required']) {
       <div class="error-message d-flex align-items-center">
         <i class="ph ph-warning-circle"></i>
-        <p class="m-0">Error message</p>
+        <p class="m-0">O nome do aluno é obrigatório</p>
       </div>
+      }
     </div>
     <div class="mb-3 d-flex align-items-end custom-input-group">
       <div class="flex-grow-1 me-2">
         <label for="atividade" class="form-label">Atividade</label>
         <input
+          #atividadeRef="ngModel"
+          maxlength="50"
+          required
+          [(ngModel)]="atividade"
+          name="atividade"
           id="atividade"
           type="text"
           class="form-control custom-input"
           placeholder="Atividade exercida"
         />
+        @if (atividadeRef.invalid && atividadeRef.touched &&
+        atividadeRef.errors?.['required']) {
+        <div class="error-message d-flex align-items-center">
+          <i class="ph ph-warning-circle"></i>
+          <p class="m-0">O nome da atividade é obrigatório</p>
+        </div>
+        }
       </div>
-      <app-secondary-button></app-secondary-button>
+      <app-secondary-button
+        [ngStyle]="atividadeRef.invalid && atividadeRef.touched &&
+        atividadeRef.errors?.['required'] ? {marginBottom: '24px'} : {}"
+      ></app-secondary-button>
     </div>
     <div class="atividade-group">
       <label class="form-label">Lista de atividades</label>
       <div class="item-list w-100">
+        @for (atividade of atividades; track $index) {
         <div class="item">
-          <span class="item-text">Configuracao com Angular CLI</span>
+          <span class="item-text">{{ atividade }}</span>
           <div class="remove-btn">
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
+        @if ($index + 1 != atividades.length) {
+        <hr />
+        } }
       </div>
     </div>
 
     <app-primary-button></app-primary-button>
   </div>
-</div>
+</form>
