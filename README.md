@@ -1,59 +1,68 @@
-# GeradorCertificado
+# 🎓 Gerador de Certificados
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+![Badge Angular](https://img.shields.io/badge/Angular-v19-DD0031?logo=angular&logoColor=white)
+![Badge Bootstrap](https://img.shields.io/badge/Bootstrap-v5.3-7952B3?logo=bootstrap&logoColor=white)
+![Badge TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 
-## Development server
+Um aplicativo web simples, construído com Angular, para criar, gerenciar e visualizar certificados de conclusão. Todos os dados são salvos localmente no navegador usando `localStorage`.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Funcionalidades Principais
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- **Criação de Certificados:** Formulário para gerar novos certificados com o nome do aluno e uma lista dinâmica de atividades concluídas.
+- **Listagem e Gerenciamento:** Página principal que exibe todos os certificados gerados e permite limpá-los.
+- **Visualização Individual:** Cada certificado possui uma página de visualização própria com um layout estilizado, pronto para impressão ou para salvar como PDF.
+- **Persistência de Dados:** Utiliza o `localStorage` do navegador para salvar os certificados, permitindo que os dados persistam mesmo após fechar a aba (não necessita de banco de dados ou backend).
+- **Identificação Única:** Cada certificado recebe um ID único gerado pela biblioteca `uuid`.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-ng generate component component-name
-```
+Este projeto foi construído utilizando as seguintes tecnologias:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **[Angular](https://angular.dev/) (v19)**: Framework principal para a construção da interface.
+- **[Bootstrap (v5.3)](https://getbootstrap.com/)**: Para estilização e layout responsivo.
+- **[Phosphor Icons](https://phosphoricons.com/)**: Biblioteca de ícones utilizada na interface.
+- **[UUID](https://github.com/uuidjs/uuid)**: Para a geração de IDs únicos para cada certificado.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 📋 Como Executar o Projeto
 
-To build the project run:
+Siga os passos abaixo para executar o projeto localmente.
 
-```bash
-ng build
-```
+### Pré-requisitos
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- [Node.js](https://nodejs.org/en/) (v18 ou superior)
+- [Angular CLI](https://angular.dev/tools/cli) (v19 ou superior)
 
-## Running unit tests
+### Instalação
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1.  Clone o repositório:
+    ```bash
+    git clone [https://github.com/seu-usuario/gerador-de-certificados.git](https://github.com/seu-usuario/gerador-de-certificados.git)
+    ```
+2.  Navegue até o diretório do projeto:
+    ```bash
+    cd gerador-de-certificados
+    ```
+3.  Instale as dependências:
+    ```bash
+    npm install
+    ```
 
-```bash
-ng test
-```
+### Rodando o Projeto
 
-## Running end-to-end tests
+1.  Execute o servidor de desenvolvimento:
+    ```bash
+    ng serve
+    ```
+2.  Abra seu navegador e acesse `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar qualquer um dos arquivos de origem.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 👨‍💻 Autor
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Feito por **Gustavo** 👋
