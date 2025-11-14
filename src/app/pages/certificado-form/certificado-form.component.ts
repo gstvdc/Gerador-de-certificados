@@ -11,42 +11,45 @@ import { Certificado } from '../../interface/certificado';
     SecondaryButtonComponent,
     PrimaryButtonComponent,
     FormsModule,
-    NgStyle,
     CommonModule,
   ],
   templateUrl: './certificado-form.component.html',
   styleUrl: './certificado-form.component.css',
 })
 export class CertificadoFormComponent {
-  nome: string = '';
-  atividade: string = '';
-  atividades: string[] = [];
+  certificado: Certificado = {
+    nome: '',
+    atividades: [],
+  };
 
-  certificado: Certificado | undefined;
+  atividade: string = '';
 
   campoInvalido(control: NgModel) {
     return control.invalid && control.touched;
   }
 
   formValido() {
-    return this.atividades.length > 0 && this.nome.length > 0;
+    return (
+      this.certificado.atividades.length > 0 && this.certificado.nome.length > 0
+    );
   }
 
   adicionarAtividade() {
     if (this.atividade.trim().length > 0) {
-      this.atividades.push(this.atividade.trim());
+      this.certificado.atividades.push(this.atividade.trim());
       this.atividade = '';
     }
   }
 
   excluirAtividade(index: number) {
-    this.atividades.splice(index, 1);
+    this.certificado.atividades.splice(index, 1);
   }
 
   submit() {
-    this.certificado = {
-      atividades: this.atividades,
-      nome: this.nome,
-    };
+    if (!this.formValido()) {
+      return;
+    }
+
+    console.log(this.certificado);
   }
 }

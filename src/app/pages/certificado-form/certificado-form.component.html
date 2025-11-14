@@ -1,4 +1,9 @@
-<form #form="ngForm" novalidate class="d-flex flex-column align-items-center">
+<form
+  #form="ngForm"
+  (ngSubmit)="submit()"
+  novalidate
+  class="d-flex flex-column align-items-center"
+>
   <div class="content-titles">
     <h1 class="fw-bold custom-title">Geração de certificados</h1>
     <p class="mb-4 custom-subtitle">
@@ -15,7 +20,7 @@
         >Nome</label
       >
       <input
-        [(ngModel)]="nome"
+        [(ngModel)]="certificado.nome"
         name="nome"
         #nomeRef="ngModel"
         maxlength="150"
@@ -57,14 +62,14 @@
     <div class="atividade-group">
       <label class="form-label">Lista de atividades</label>
       <div class="item-list w-100">
-        @for (atividade of atividades; track $index) {
+        @for (atividade of certificado.atividades; track $index) {
         <div class="item">
           <span class="item-text">{{ atividade }}</span>
           <div class="remove-btn" (click)="excluirAtividade($index)">
             <i class="ph-bold ph-x"></i>
           </div>
         </div>
-        @if ($index + 1 != atividades.length) {
+        @if ($index + 1 != certificado.atividades.length) {
         <hr />
         } }
       </div>
@@ -72,7 +77,7 @@
 
     <app-primary-button
       (click)="(submit)"
-      [disabled]="!formValido() || atividades.length === 0"
+      [disabled]="!formValido() || certificado.atividades.length === 0"
       textoBotao="Gerar Certificado"
     ></app-primary-button>
   </div>
