@@ -41,7 +41,7 @@ export class CertificadoComponent implements OnInit {
         const link = document.createElement('a');
         link.href = canvas.toDataURL('imagem/png');
         link.download =
-          'certificado_' + this.certificado?.nome.replaceAll('', '_') + '.png';
+          'certificado_' + this.certificado?.nome.replaceAll(' ', '_') + '.png';
         link.click();
       }
     );

@@ -76,7 +76,7 @@
     </div>
 
     <app-primary-button
-      (click)="(submit)"
+      (click)="submit()"
       [disabled]="!formValido() || certificado.atividades.length === 0"
       textoBotao="Gerar Certificado"
     ></app-primary-button>
