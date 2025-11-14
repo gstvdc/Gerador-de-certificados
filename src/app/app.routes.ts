@@ -9,7 +9,7 @@ export const routes: Routes = [
     component: CertificadosComponent,
   },
   {
-    path: 'certificados/novo',
+    path: 'certificado/novo',
     component: CertificadoFormComponent,
   },
   {
