@@ -4,9 +4,18 @@
       <div class="fw-bold nome-aluno">{{ nomeAluno }}</div>
       <small class="small-date">Gerado em {{ dataEmissao }}</small>
     </div>
-    <app-secondary-button
-      textoBotao="Ver"
-      (click)="redirecionaCertificado()"
-    ></app-secondary-button>
+    <div class="d-flex gap-2 align-items-center">
+      <button
+        class="btn-excluir"
+        (click)="excluirCertificado()"
+        title="Excluir certificado"
+      >
+        <i class="ph ph-trash"></i>
+      </button>
+      <app-secondary-button
+        textoBotao="Ver"
+        (click)="redirecionaCertificado()"
+      ></app-secondary-button>
+    </div>
   </div>
 </div>

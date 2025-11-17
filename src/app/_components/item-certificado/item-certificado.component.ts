@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { SecondaryButtonComponent } from '../secondary-button/secondary-button.component';
 
@@ -12,10 +12,15 @@ export class ItemCertificadoComponent {
   @Input() nomeAluno: string = '';
   @Input() dataEmissao: string = '';
   @Input() id: string = '';
+  @Output() excluir = new EventEmitter<string>();
 
   constructor(private router: Router) {}
 
   redirecionaCertificado() {
     this.router.navigate(['/certificados', this.id]);
+  }
+
+  excluirCertificado() {
+    this.excluir.emit(this.id);
   }
 }

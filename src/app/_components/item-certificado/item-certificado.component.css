@@ -11,3 +11,23 @@
   border-radius: 8px;
   margin-bottom: 8px;
 }
+
+.btn-excluir {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+
+.btn-excluir:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.btn-excluir:active {
+  transform: scale(0.95);
+}

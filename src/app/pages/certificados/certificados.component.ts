@@ -19,4 +19,9 @@ export class CertificadosComponent implements OnInit {
   ngOnInit(): void {
     this.certificados = this.certificadoService.certificados;
   }
+
+  excluirCertificado(id: string) {
+    this.certificadoService.excluirCertificado(id);
+    this.certificados = this.certificadoService.certificados;
+  }
 }

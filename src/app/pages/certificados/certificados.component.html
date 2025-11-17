@@ -24,6 +24,7 @@
       [nomeAluno]="certificado.nome"
       [dataEmissao]="certificado.dataEmissao"
       [id]="certificado.id"
+      (excluir)="excluirCertificado($event)"
     ></app-item-certificado>
     }
   </div>
